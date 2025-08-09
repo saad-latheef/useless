@@ -15,6 +15,9 @@
 
 A complete Predicter to help us predict normal day to day issues of a common Mallu
 
+### Vercel Live Link
+https://useless-beta.vercel.app/
+
 ### The Problem (that doesn't exist)
 
 The problem of not knowing when a coconut is going to fall or when our dignity is defied
