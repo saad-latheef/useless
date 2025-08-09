@@ -1,0 +1,5 @@
+export { default as FeaturesPageHeader } from './FeaturesPageHeader'
+export { default as CoconutPredictorSection } from './CoconutPredictorSection'
+export { default as MunduPredictorSection } from './MunduPredictorSection'
+export { default as ProTipsSection } from './ProTipsSection'
+export { default as FeaturesCTASection } from './FeaturesCTASection'

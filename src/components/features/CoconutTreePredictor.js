@@ -56,34 +56,45 @@ export default function CoconutTreePredictor() {
     setIsAnalyzing(true)
     
     try {
-      // TODO: Replace with actual Gemini AI API call
       console.log("Analyzing coconut tree image:", selectedImage.name)
       console.log("Additional info:", additionalInfo)
       
+      // Create FormData for image upload
+      const formData = new FormData()
+      formData.append('image', selectedImage)
+      formData.append('additionalInfo', additionalInfo)
       
-      // Mock result for now
-      const mockResult = {
-        riskLevel: Math.random() > 0.5 ? "HIGH" : "MEDIUM",
-        confidence: Math.floor(Math.random() * 30) + 70,
-        factors: [
-          "Tree lean angle detected",
-          "Coconut cluster weight analysis",
-          "Wind resistance assessment",
-          "Root stability evaluation"
-        ],
-        prediction: `Based on AI analysis, coconuts have a ${Math.floor(Math.random() * 40) + 30}% chance of falling within the next 24 hours.`,
-        recommendations: [
-          "Monitor wind conditions",
-          "Consider harvesting ripe coconuts",
-          "Check tree stability"
-        ]
+      // Call the API
+      const response = await fetch('/api/analyze-coconut', {
+        method: 'POST',
+        body: formData
+      })
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Analysis failed')
       }
       
-      setAnalysisResult(mockResult)
+      const result = await response.json()
+      
+      if (result.error) {
+        throw new Error(result.error)
+      }
+      
+      // Ensure the result has the expected structure
+      const processedResult = {
+        riskLevel: result.riskLevel || "MEDIUM",
+        confidence: result.confidence || 75,
+        factors: Array.isArray(result.factors) ? result.factors : ["Analysis completed"],
+        prediction: result.prediction || "Analysis completed successfully",
+        recommendations: Array.isArray(result.recommendations) ? result.recommendations : ["Monitor tree regularly"]
+      }
+      
+      setAnalysisResult(processedResult)
     } catch (error) {
-      console.error("Analysis failed:", error)
+      console.error("Coconut analysis failed:", error)
       setAnalysisResult({
-        error: "Analysis failed. Please try again with a clearer image."
+        error: error.message || "Analysis failed. Please try again with a clearer image of the coconut tree."
       })
     } finally {
       setIsAnalyzing(false)

@@ -56,33 +56,42 @@ export default function MunduFallPredictor() {
     setIsAnalyzing(true)
     
     try {
-      // TODO: Replace with actual Gemini AI API call for mundu analysis
       console.log("Analyzing mundu image:", selectedImage.name)
       console.log("Additional info:", additionalInfo)
       
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Create FormData for image upload
+      const formData = new FormData()
+      formData.append('image', selectedImage)
+      formData.append('additionalInfo', additionalInfo)
       
-      // Mock result for mundu analysis
-      const mockResult = {
-        stabilityLevel: Math.random() > 0.6 ? "SECURE" : Math.random() > 0.3 ? "MODERATE" : "RISKY",
-        confidence: Math.floor(Math.random() * 25) + 75,
-        factors: [
-          "Knot tightness assessment",
-          "Fabric tension analysis",
-          "Body posture evaluation", 
-          "Movement pattern prediction"
-        ],
-        prediction: `Based on AI analysis, your mundu has a ${Math.floor(Math.random() * 30) + 70}% stability rating for the next 2 hours.`,
-        recommendations: [
-          "Adjust knot positioning",
-          "Check fabric wrapping",
-          "Maintain confident posture",
-          "Avoid sudden movements"
-        ]
+      // Call the API
+      const response = await fetch('/api/analyze-mundu', {
+        method: 'POST',
+        body: formData
+      })
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Analysis failed')
       }
       
-      setAnalysisResult(mockResult)
+      const result = await response.json()
+      
+      if (result.error) {
+        throw new Error(result.error)
+      }
+      
+      // Ensure the result has the expected structure for mundu analysis
+      const processedResult = {
+        stabilityLevel: result.stabilityLevel || "MODERATE",
+        confidence: result.confidence || 75,
+        factors: Array.isArray(result.factors) ? result.factors : ["Analysis completed"],
+        prediction: result.prediction || "Analysis completed successfully",
+        recommendations: Array.isArray(result.recommendations) ? result.recommendations : ["Adjust positioning if needed"],
+        wornTooLow: result.wornTooLow || false
+      }
+      
+      setAnalysisResult(processedResult)
     } catch (error) {
       console.error("Mundu analysis failed:", error)
       setAnalysisResult({

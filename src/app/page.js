@@ -12,16 +12,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-green-600 to-yellow-600 opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="text-center">
-            <h1 className="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-8">
-              <span className="bg-gradient-to-r from-blue-600 via-green-600 to-yellow-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+              <span className="bg-gradient-to-r from-blue-600 via-green-600 to-yellow-600 bg-clip-text text-transparent font-extrabold">
                 The Ultimate Kerala Predictor
               </span>
               <span className="block text-3xl sm:text-4xl mt-4">🌴 🥥 👘</span>
             </h1>
-            <p className="text-2xl sm:text-3xl text-gray-700 font-bold mb-6">
+            <p className="text-2xl sm:text-3xl text-gray-700 font-medium mb-6 tracking-wide">
               "Predicting life's most unpredictable moments... with style!"
             </p>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12 font-light">
               Welcome to the most scientifically questionable yet culturally accurate prediction app 
               for all things Kerala! From coconut physics to mundu mechanics, we've got your 
               predictions covered with 100% confidence and 0% accuracy guarantee.
@@ -29,14 +29,10 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/features">
-                <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold">
+                <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-medium tracking-wide">
                   🚀 Try Our Predictors
                 </Button>
               </Link>
-              <div className="inline-flex items-center space-x-2 bg-white bg-opacity-80 rounded-full px-6 py-3 shadow-lg">
-                <span className="text-2xl">🤔</span>
-                <span className="text-gray-700 font-medium">Powered by pure speculation</span>
-              </div>
             </div>
           </div>
         </div>
@@ -46,10 +42,10 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
               🎯 What Can We Predict?
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-light">
               Discover our revolutionary prediction tools that combine ancient Kerala wisdom with modern guesswork
             </p>
           </div>
@@ -131,24 +127,6 @@ export default function Home() {
               <p className="opacity-90">Blessed by the backwaters themselves</p>
             </div>
           </div>
-
-          <div className="flex justify-center space-x-8 text-5xl mb-8">
-            <span>🥥</span>
-            <span>🌴</span>
-            <span>👘</span>
-            <span>☕</span>
-            <span>🛶</span>
-          </div>
-          
-          <p className="text-lg opacity-90 mb-8">
-            "Because every great app needs a touch of Kerala magic!"
-          </p>
-          
-          <Link href="/features">
-            <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-              🚀 Experience the Magic
-            </Button>
-          </Link>
         </div>
       </section>
 
@@ -157,10 +135,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm opacity-75">
             Disclaimer: Predictions may vary. Coconuts and mundus are not actually harmed in the making of this app.
-          </p>
-          <p className="mt-2 text-sm opacity-60">
-            Built with ❤️ for hackathon excellence
-          </p>
+          </p>   
         </div>
       </footer>
     </div>

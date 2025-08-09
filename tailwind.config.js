@@ -47,6 +47,10 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'mono': ['var(--font-jetbrains-mono)', 'monospace'],
+      },
     },
   },
   plugins: [],
