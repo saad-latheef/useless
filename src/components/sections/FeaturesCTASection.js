@@ -15,9 +15,6 @@ export default function FeaturesCTASection() {
               🏠 Back to Home
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold">
-            📞 Contact Us
-          </Button>
         </div>
       </div>
     </section>
