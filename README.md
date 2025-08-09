@@ -54,20 +54,16 @@ For Software:
 # Screenshots (Add at least 3)
 
 <img src="/Screenshot 2025-08-09 164749.png" alt="Home Page" width="600"/>
-<br/>
-*Mundu Stability Image.*
+Mundu Stability Image.
 
 <img src="/Screenshot 2025-08-09 164801.png" alt="Prediction Result" width="600"/>
-<br/>
-*Mundu Stability.*
+Mundu Stability.
 
 <img src="/Screenshot 2025-08-09 164821.png" alt="Live Footage Analysis" width="600"/>
-<br/>
-*Real-time analysis for coconut fall prediction.*
+Real-time analysis for coconut fall prediction.
 
 <img src="/Screenshot 2025-08-09 164828.png" alt="Settings Page" width="600"/>
-<br/>
-*Uploading Coconut tree image.*
+Uploading Coconut tree image.
 
 ### Project Demo
 
