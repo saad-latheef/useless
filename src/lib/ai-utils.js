@@ -6,7 +6,7 @@ import {
 } from './ai-constants';
 
 // Initialize AI client with API key from environment
-const genAI = new GoogleGenerativeAI(process.env."AIzaSyByLbSouj5k8oDqvV4jlRYU1daXv8gdnO8");
+const genAI = new GoogleGenerativeAI("AIzaSyByLbSouj5k8oDqvV4jlRYU1daXv8gdnO8");
 
 /**
  * Processes an image with Gemini AI and returns the analysis
