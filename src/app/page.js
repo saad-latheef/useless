@@ -14,7 +14,7 @@ export default function Home() {
           <div className="text-center">
             <h1 className="text-5xl sm:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
               <span className="bg-gradient-to-r from-blue-600 via-green-600 to-yellow-600 bg-clip-text text-transparent font-extrabold">
-                The Ultimate Kerala Predictor
+                The Ultimate Mallu Predictor
               </span>
               <span className="block text-3xl sm:text-4xl mt-4">🌴 🥥 👘</span>
             </h1>
@@ -108,7 +108,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gradient-to-r from-green-800 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-4xl font-bold mb-8">🏆 Why Kerala Predictor?</h3>
+          <h3 className="text-4xl font-bold mb-8">🏆 Why Mallu Predictor?</h3>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="space-y-4">
